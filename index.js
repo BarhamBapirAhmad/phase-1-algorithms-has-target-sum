@@ -1,5 +1,16 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let hash = {};
+  for (let i = 0; i < array.length; i++) {
+    if (hash[array[i]]) {
+      return true;
+    } else {
+      hash[target - array[i]] = true;
+    }
+  }
+  return false;
+  
+
 }
 
 /* 
